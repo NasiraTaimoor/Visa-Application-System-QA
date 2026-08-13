@@ -338,7 +338,7 @@ Story and polish tasks reference `qa-test-scenarios.md` (`TS-FR-###`) and `qa-te
 - [ ] T174 [P] Regression suite for lifecycle transition matrix enforcement across all statuses in `backend/tests/regression/test_status_transition_matrix.py`
 - [ ] T175 [P] Regression suite for action-level permission matrix enforcement across all roles in `backend/tests/regression/test_permission_matrix.py`
 - [ ] T176 [P] Regression suite confirming immutability of submitted snapshots, final decisions, financial records, and audit records in `backend/tests/regression/test_immutable_records.py`
-- [ ] T177 [P] Regression suite for in-progress case preservation during rule/fee/routing/integration changes in `backend/tests/regression/test_rule_change_preservation.py`
+- [ ] T177 [P] Regression suite for in-progress case preservation during rule/fee/routing/integration changes, covering `FR-035` and recording traceability to `TS-FR-035`/`TC-FR-035`, in `backend/tests/regression/test_rule_change_preservation.py`
 - [ ] T178 [P] End-to-end applicant-led full lifecycle smoke suite (draft through final decision) in `backend/tests/e2e/test_e2e_applicant_led.py`
 - [ ] T179 [P] End-to-end sub-agency-led full lifecycle smoke suite in `backend/tests/e2e/test_e2e_sub_agency_led.py`
 - [ ] T180 [P] End-to-end rework-path suite (validation failure, correction, GDRFA rejection, payment failure, immigration action-required) in `backend/tests/e2e/test_e2e_rework_paths.py`
@@ -353,6 +353,7 @@ Story and polish tasks reference `qa-test-scenarios.md` (`TS-FR-###`) and `qa-te
 - [ ] T189 Execute the full `quickstart.md` validation flow end-to-end and record results in `specs/001-visa-application-lifecycle/quickstart.md`
 - [ ] T190 [P] Update API, integration, and UI contract documentation to reflect the final implementation in `specs/001-visa-application-lifecycle/contracts/`
 - [ ] T191 Code cleanup and refactoring pass across `backend/src/` and `frontend/src/` modules
+- [ ] T192 [P] Execute a moderated usability acceptance-testing session validating `SC-001` (at least 95% of applicants/sub-agency officers complete required intake fields in 15 minutes or less, excluding external wait time) and `SC-008` (at least 90% of representative users complete the primary application flow on first attempt), instrumented with time-on-task and first-attempt completion-rate measurement, and record results in `specs/001-visa-application-lifecycle/checklists/usability-acceptance-review.md`
 
 ---
 

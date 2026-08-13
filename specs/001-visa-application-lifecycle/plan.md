@@ -130,7 +130,7 @@ Notification rules send minimal actionable messages for submission, correction, 
 
 ### Roles and Permissions
 
-Authorization enforces action-level permissions for Applicant, Sub-agency Officer, Main Agency Case Officer, Main Agency Supervisor, Finance Officer, Support Admin, Auditor/Compliance User, Immigration/GDRFA Liaison, Payment Provider, Integration Source, Notification Gateway, and System Service. Checks include role, agency scope, lifecycle state, ownership, source validation, and required business reason.
+Authorization enforces action-level permissions for the roles defined in `spec.md`'s Roles and Permissions table: Applicant, Sub-agency Officer, Sub-agency Admin, Main Agency Case Officer, Main Agency Supervisor, Finance Officer, GDRFA or Immigration Liaison, Support Admin, Auditor or Compliance User, and System Service. External integration sources (payment provider, GDRFA, immigration, notification gateways) act under the System Service identity per `spec.md`'s System Service role definition, not as separate roles. Checks include role, agency scope, lifecycle state, ownership, source validation, and required business reason.
 
 ### Audit Logging
 

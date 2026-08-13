@@ -8,50 +8,54 @@
 
 ## Traceability Matrix
 
-| Requirement ID | Test Scenario ID | Test Case ID |
-|---|---|---|
-| FR-001 | TS-FR-001 | TC-FR-001 |
-| FR-002 | TS-FR-002 | TC-FR-002 |
-| FR-003 | TS-FR-003 | TC-FR-003 |
-| FR-004 | TS-FR-004 | TC-FR-004 |
-| FR-005 | TS-FR-005 | TC-FR-005 |
-| FR-006 | TS-FR-006 | TC-FR-006 |
-| FR-007 | TS-FR-007 | TC-FR-007 |
-| FR-008 | TS-FR-008 | TC-FR-008 |
-| FR-009 | TS-FR-009 | TC-FR-009 |
-| FR-010 | TS-FR-010 | TC-FR-010 |
-| FR-011 | TS-FR-011 | TC-FR-011 |
-| FR-012 | TS-FR-012 | TC-FR-012 |
-| FR-013 | TS-FR-013 | TC-FR-013 |
-| FR-014 | TS-FR-014 | TC-FR-014 |
-| FR-015 | TS-FR-015 | TC-FR-015 |
-| FR-016 | TS-FR-016 | TC-FR-016 |
-| FR-017 | TS-FR-017 | TC-FR-017 |
-| FR-018 | TS-FR-018 | TC-FR-018 |
-| FR-019 | TS-FR-019 | TC-FR-019 |
-| FR-020 | TS-FR-020 | TC-FR-020 |
-| FR-021 | TS-FR-021 | TC-FR-021 |
-| FR-022 | TS-FR-022 | TC-FR-022 |
-| FR-023 | TS-FR-023 | TC-FR-023 |
-| FR-024 | TS-FR-024 | TC-FR-024 |
-| FR-025 | TS-FR-025 | TC-FR-025 |
-| FR-026 | TS-FR-026 | TC-FR-026 |
-| FR-027 | TS-FR-027 | TC-FR-027 |
-| FR-028 | TS-FR-028 | TC-FR-028 |
-| FR-029 | TS-FR-029 | TC-FR-029 |
-| FR-030 | TS-FR-030 | TC-FR-030 |
-| FR-031 | TS-FR-031 | TC-FR-031 |
-| FR-032 | TS-FR-032 | TC-FR-032 |
-| FR-033 | TS-FR-033 | TC-FR-033 |
-| FR-034 | TS-FR-034 | TC-FR-034 |
-| FR-035 | TS-FR-035 | TC-FR-035 |
-| FR-036 | TS-FR-036 | TC-FR-036 |
-| FR-037 | TS-FR-037 | TC-FR-037 |
-| FR-038 | TS-FR-038 | TC-FR-038 |
-| FR-039 | TS-FR-039 | TC-FR-039 |
-| FR-040 | TS-FR-040 | TC-FR-040 |
-| FR-041 | TS-FR-041 | TC-FR-041 |
-| FR-042 | TS-FR-042 | TC-FR-042 |
+| Requirement ID | Test Scenario ID | Test Case ID | Business Rule(s) | Error Scenario(s) |
+|---|---|---|---|---|
+| FR-001 | TS-FR-001 | TC-FR-001 | BR-032 | E-009, E-019 |
+| FR-002 | TS-FR-002 | TC-FR-002 | BR-001, BR-016 | E-003, E-012 |
+| FR-003 | TS-FR-003 | TC-FR-003 | BR-014 | E-009 |
+| FR-004 | TS-FR-004 | TC-FR-004 | BR-001 | E-003 |
+| FR-005 | TS-FR-005 | TC-FR-005 | BR-019, BR-020 | E-001 |
+| FR-006 | TS-FR-006 | TC-FR-006 | None specific | E-009, E-010 |
+| FR-007 | TS-FR-007 | TC-FR-007 | BR-021 | E-002, E-018 |
+| FR-008 | TS-FR-008 | TC-FR-008 | BR-003, BR-018 | E-002, E-018 |
+| FR-009 | TS-FR-009 | TC-FR-009 | BR-001, BR-002, BR-010, BR-015, BR-017 | E-003 |
+| FR-010 | TS-FR-010 | TC-FR-010 | BR-015 | E-003 |
+| FR-011 | TS-FR-011 | TC-FR-011 | BR-004, BR-015, BR-016 | E-003, E-012, E-013 |
+| FR-012 | TS-FR-012 | TC-FR-012 | BR-008, BR-026 | None specific |
+| FR-013 | TS-FR-013 | TC-FR-013 | BR-007 | E-004 |
+| FR-014 | TS-FR-014 | TC-FR-014 | BR-007, BR-009, BR-022, BR-023, BR-024, BR-026 | E-004, E-014 |
+| FR-015 | TS-FR-015 | TC-FR-015 | BR-025, BR-027 | E-005, E-015 |
+| FR-016 | TS-FR-016 | TC-FR-016 | BR-005, BR-022 | E-005 |
+| FR-017 | TS-FR-017 | TC-FR-017 | BR-006 | E-009 |
+| FR-018 | TS-FR-018 | TC-FR-018 | BR-006, BR-033 | E-009, E-010, E-019 |
+| FR-019 | TS-FR-019 | TC-FR-019 | BR-036, BR-037 | E-020 |
+| FR-020 | TS-FR-020 | TC-FR-020 | BR-017, BR-027, BR-039 | E-005, E-006 |
+| FR-021 | TS-FR-021 | TC-FR-021 | BR-013, BR-027, BR-028, BR-029, BR-030 | E-006, E-008, E-015, E-016, E-017 |
+| FR-022 | TS-FR-022 | TC-FR-022 | BR-009, BR-034 | E-007 |
+| FR-023 | TS-FR-023 | TC-FR-023 | BR-009, BR-013, BR-027 | E-007, E-008, E-015 |
+| FR-024 | TS-FR-024 | TC-FR-024 | BR-011, BR-013 | E-008, E-011, E-017 |
+| FR-025 | TS-FR-025 | TC-FR-025 | None specific | E-009 |
+| FR-026 | TS-FR-026 | TC-FR-026 | BR-012 | None specific |
+| FR-027 | TS-FR-027 | TC-FR-027 | BR-012 | None specific |
+| FR-028 | TS-FR-028 | TC-FR-028 | BR-040 | E-016 |
+| FR-029 | TS-FR-029 | TC-FR-029 | BR-036, BR-037, BR-038, BR-039, BR-040 | E-020 |
+| FR-030 | TS-FR-030 | TC-FR-030 | BR-011 | E-009, E-011 |
+| FR-031 | TS-FR-031 | TC-FR-031 | None specific | E-001, E-004, E-006, E-007, E-009 |
+| FR-032 | TS-FR-032 | TC-FR-032 | None specific | E-009 |
+| FR-033 | TS-FR-033 | TC-FR-033 | BR-005, BR-006, BR-031, BR-032, BR-033, BR-034, BR-035 | E-009, E-019 |
+| FR-034 | TS-FR-034 | TC-FR-034 | BR-014 | None specific |
+| FR-035 | TS-FR-035 | TC-FR-035 | BR-008, BR-026, BR-030 | E-006, E-016 |
+| FR-036 | TS-FR-036 | TC-FR-036 | BR-013 | E-011 |
+| FR-037 | TS-FR-037 | TC-FR-037 | BR-015, BR-016, BR-018 | E-003, E-012, E-013 |
+| FR-038 | TS-FR-038 | TC-FR-038 | BR-009, BR-022, BR-038 | E-015 |
+| FR-039 | TS-FR-039 | TC-FR-039 | BR-025, BR-027, BR-028 | E-005, E-015, E-016 |
+| FR-040 | TS-FR-040 | TC-FR-040 | BR-031, BR-032, BR-033, BR-034, BR-035 | E-009, E-019 |
+| FR-041 | TS-FR-041 | TC-FR-041 | BR-036, BR-037, BR-038, BR-039, BR-040 | E-020 |
+| FR-042 | TS-FR-042 | TC-FR-042 | BR-019, BR-020, BR-021 | E-001, E-002, E-018 |
+
+**Traceability provenance note**: The `Business Rule(s)` and `Error Scenario(s)` columns above (and the matching per-test-case fields below) were derived analytically by cross-referencing each FR's test data against `spec.md`'s Business Rules (BR-001–BR-040) and Error Scenarios and Handling (E-001–E-020) tables during QA remediation. This mapping has not yet received domain-owner/QA-lead sign-off and should not be treated as authoritative for release gating until confirmed. No approved business rule or error scenario definition in `spec.md` was altered by this mapping exercise.
+
+**Known open item pending spec clarification**: `TC-FR-040` (and `TC-FR-033`) exercise the action-level permission matrix in `spec.md`, but that matrix (lines 314–330) and the FR-040 action list do not include a row for the Sub-agency Admin permissions described narratively in `spec.md`'s Roles and Permissions table ("manage sub-agency users, view wallet summary, monitor submissions, handle operational exceptions within scope"). Neither `TC-FR-040` nor `TC-FR-033` currently exercises those specific Sub-agency Admin actions as a result. Closing this gap requires a domain-owner decision on whether to add an explicit action-level-matrix row in `spec.md` or to document sub-agency user administration as out of this feature's scope — this document does not presume that decision.
 
 ## Test Cases
 
@@ -62,6 +66,8 @@
 | Test Case ID | TC-FR-001 |
 | Requirement ID | FR-001 |
 | Test Scenario ID | TS-FR-001 |
+| Business Rule(s) | BR-032 |
+| Error Scenario(s) | E-009, E-019 |
 | Module | Application Intake / Case Creation |
 | Test Case Title | Authorized user creates a visa application for selected visa type and agency relationship |
 | Objective | Verify only authorized applicants and sub-agency officers can create one draft case with the selected visa type, responsible agency relationship, initial status, case reference, and audit record. |
@@ -82,6 +88,8 @@
 | Test Case ID | TC-FR-002 |
 | Requirement ID | FR-002 |
 | Test Scenario ID | TS-FR-002 |
+| Business Rule(s) | BR-001, BR-016 |
+| Error Scenario(s) | E-003, E-012 |
 | Module | Application Intake / Data Capture |
 | Test Case Title | Required applicant, contact, passport, travel, sponsor, visa type, and consent data gate submission |
 | Objective | Verify required intake fields are captured, validated, retained, and protected before submission is allowed. |
@@ -102,6 +110,8 @@
 | Test Case ID | TC-FR-003 |
 | Requirement ID | FR-003 |
 | Test Scenario ID | TS-FR-003 |
+| Business Rule(s) | BR-014 |
+| Error Scenario(s) | E-009 |
 | Module | Draft Lifecycle / Retention |
 | Test Case Title | Draft applications are saved, resumed, and abandoned under retention rules |
 | Objective | Verify draft data can be safely saved and resumed by authorized users, abandoned drafts cannot proceed, and retention behavior protects personal data. |
@@ -122,6 +132,8 @@
 | Test Case ID | TC-FR-004 |
 | Requirement ID | FR-004 |
 | Test Scenario ID | TS-FR-004 |
+| Business Rule(s) | BR-001 |
+| Error Scenario(s) | E-003 |
 | Module | Intake Progress / Readiness |
 | Test Case Title | Completion status and missing required items are visible before agency submission |
 | Objective | Verify the application readiness view accurately identifies completed sections, missing fields, missing documents, validation blockers, and role-appropriate next actions. |
@@ -142,6 +154,8 @@
 | Test Case ID | TC-FR-005 |
 | Requirement ID | FR-005 |
 | Test Scenario ID | TS-FR-005 |
+| Business Rule(s) | BR-019, BR-020 |
+| Error Scenario(s) | E-001 |
 | Module | Document Upload / Screening |
 | Test Case Title | Passport and supporting documents pass type, size, quality, and security checks before acceptance |
 | Objective | Verify valid documents are accepted and unsafe, invalid, oversized, corrupted, duplicated, interrupted, or unsupported files are rejected safely. |
@@ -162,6 +176,8 @@
 | Test Case ID | TC-FR-006 |
 | Requirement ID | FR-006 |
 | Test Scenario ID | TS-FR-006 |
+| Business Rule(s) | None specific |
+| Error Scenario(s) | E-009, E-010 |
 | Module | Document Management |
 | Test Case Title | Upload metadata, actor, time, status, and versions are traceable |
 | Objective | Verify every document upload and replacement creates accurate metadata, verification status, version history, protected references, and audit evidence. |
@@ -182,6 +198,8 @@
 | Test Case ID | TC-FR-007 |
 | Requirement ID | FR-007 |
 | Test Scenario ID | TS-FR-007 |
+| Business Rule(s) | BR-021 |
+| Error Scenario(s) | E-002, E-018 |
 | Module | OCR / Document Extraction |
 | Test Case Title | Eligible documents receive OCR with extracted fields and confidence indicators |
 | Objective | Verify OCR is requested only for eligible screened documents and authorized users can review extraction status, values, and confidence indicators. |
@@ -202,6 +220,8 @@
 | Test Case ID | TC-FR-008 |
 | Requirement ID | FR-008 |
 | Test Scenario ID | TS-FR-008 |
+| Business Rule(s) | BR-003, BR-018 |
+| Error Scenario(s) | E-002, E-018 |
 | Module | OCR Review / Data Confirmation |
 | Test Case Title | OCR-extracted values remain advisory until authorized review or correction |
 | Objective | Verify OCR values cannot become confirmed application data until reviewed, corrected where needed, and confirmed by an authorized user. |
@@ -222,6 +242,8 @@
 | Test Case ID | TC-FR-009 |
 | Requirement ID | FR-009 |
 | Test Scenario ID | TS-FR-009 |
+| Business Rule(s) | BR-001, BR-002, BR-010, BR-015, BR-017 |
+| Error Scenario(s) | E-003 |
 | Module | Validation Engine |
 | Test Case Title | Application data validates required fields, documents, passport, visa-type, duplicate-risk, and agency rules |
 | Objective | Verify validation evaluates all configured rule categories and produces accurate pass or finding outcomes without data loss or unauthorized disclosure. |
@@ -242,6 +264,8 @@
 | Test Case ID | TC-FR-010 |
 | Requirement ID | FR-010 |
 | Test Scenario ID | TS-FR-010 |
+| Business Rule(s) | BR-015 |
+| Error Scenario(s) | E-003 |
 | Module | Validation Findings / User Guidance |
 | Test Case Title | Validation findings show severity, affected item, owner, and corrective action |
 | Objective | Verify findings are complete, understandable, role-appropriate, accessible, and tied to the correct field or document. |
@@ -262,6 +286,8 @@
 | Test Case ID | TC-FR-011 |
 | Requirement ID | FR-011 |
 | Test Scenario ID | TS-FR-011 |
+| Business Rule(s) | BR-004, BR-015, BR-016 |
+| Error Scenario(s) | E-003, E-012, E-013 |
 | Module | Validation Gate / Submission Control |
 | Test Case Title | Blocking findings prevent submission until corrected or authorized override exists |
 | Objective | Verify submission cannot proceed when blocking findings remain unresolved unless an authorized overrideable finding is approved with a reason. |
@@ -282,6 +308,8 @@
 | Test Case ID | TC-FR-012 |
 | Requirement ID | FR-012 |
 | Test Scenario ID | TS-FR-012 |
+| Business Rule(s) | BR-008, BR-026 |
+| Error Scenario(s) | None specific |
 | Module | Fees / Financial Calculation |
 | Test Case Title | Required fees and charges are calculated with amount, currency, version, stage, and breakdown |
 | Objective | Verify fee calculation uses selected visa type, agency relationship, and processing stage, and handles missing schedules, currency, rounding, and fee changes. |
@@ -302,6 +330,8 @@
 | Test Case ID | TC-FR-013 |
 | Requirement ID | FR-013 |
 | Test Scenario ID | TS-FR-013 |
+| Business Rule(s) | BR-007 |
+| Error Scenario(s) | E-004 |
 | Module | Wallet / Availability Check |
 | Test Case Title | Sub-agency wallet availability gates submission to main agency |
 | Objective | Verify wallet availability is checked before submission and only sufficient available balance permits the submission flow. |
@@ -322,6 +352,8 @@
 | Test Case ID | TC-FR-014 |
 | Requirement ID | FR-014 |
 | Test Scenario ID | TS-FR-014 |
+| Business Rule(s) | BR-007, BR-009, BR-022, BR-023, BR-024, BR-026 |
+| Error Scenario(s) | E-004, E-014 |
 | Module | Wallet / Ledger Lifecycle |
 | Test Case Title | Wallet financial actions follow case outcome and financial rules |
 | Objective | Verify reservations, debits, releases, and refunds occur once, at the correct lifecycle point, and only by authorized actors or sources. |
@@ -342,6 +374,8 @@
 | Test Case ID | TC-FR-015 |
 | Requirement ID | FR-015 |
 | Test Scenario ID | TS-FR-015 |
+| Business Rule(s) | BR-025, BR-027 |
+| Error Scenario(s) | E-005, E-015 |
 | Module | Wallet / Idempotency |
 | Test Case Title | Duplicate submission attempts do not duplicate wallet reservation or debit |
 | Objective | Verify repeated, concurrent, retried, or duplicate accepted submission attempts preserve one financial outcome. |
@@ -362,6 +396,8 @@
 | Test Case ID | TC-FR-016 |
 | Requirement ID | FR-016 |
 | Test Scenario ID | TS-FR-016 |
+| Business Rule(s) | BR-005, BR-022 |
+| Error Scenario(s) | E-005 |
 | Module | Sub-Agency Submission |
 | Test Case Title | Owning sub-agency submits validated application and receives submission reference |
 | Objective | Verify an owning sub-agency officer can submit only a validated, version-matched application with an active wallet reservation. |
@@ -382,6 +418,8 @@
 | Test Case ID | TC-FR-017 |
 | Requirement ID | FR-017 |
 | Test Scenario ID | TS-FR-017 |
+| Business Rule(s) | BR-006 |
+| Error Scenario(s) | E-009 |
 | Module | Routing / Main Agency Queue |
 | Test Case Title | Submitted cases route by agency relationship and visa type without unauthorized visibility |
 | Objective | Verify submitted applications appear in the correct main agency queue and are not visible in unauthorized queues. |
@@ -402,6 +440,8 @@
 | Test Case ID | TC-FR-018 |
 | Requirement ID | FR-018 |
 | Test Scenario ID | TS-FR-018 |
+| Business Rule(s) | BR-006, BR-033 |
+| Error Scenario(s) | E-009, E-010, E-019 |
 | Module | Main Agency Processing |
 | Test Case Title | Main agency officers process, assign, correct, approve, reject, and escalate within scope |
 | Objective | Verify authorized main agency users can perform supported processing actions only within agency scope and workflow state. |
@@ -422,6 +462,8 @@
 | Test Case ID | TC-FR-019 |
 | Requirement ID | FR-019 |
 | Test Scenario ID | TS-FR-019 |
+| Business Rule(s) | BR-036, BR-037 |
+| Error Scenario(s) | E-020 |
 | Module | Main Agency Decision Records |
 | Test Case Title | Main agency decisions capture actor, timestamp, decision, reason, notes, and attachments |
 | Objective | Verify decision records are complete, traceable, permission-controlled, and protected from unauthorized visibility. |
@@ -442,6 +484,8 @@
 | Test Case ID | TC-FR-020 |
 | Requirement ID | FR-020 |
 | Test Scenario ID | TS-FR-020 |
+| Business Rule(s) | BR-017, BR-027, BR-039 |
+| Error Scenario(s) | E-005, E-006 |
 | Module | GDRFA Submission |
 | Test Case Title | Approved applications submit to GDRFA with tracked reference, time, status, and reason |
 | Objective | Verify GDRFA submission occurs only after readiness approval and prerequisites, and records submission and response details once. |
@@ -462,6 +506,8 @@
 | Test Case ID | TC-FR-021 |
 | Requirement ID | FR-021 |
 | Test Scenario ID | TS-FR-021 |
+| Business Rule(s) | BR-013, BR-027, BR-028, BR-029, BR-030 |
+| Error Scenario(s) | E-006, E-008, E-015, E-016, E-017 |
 | Module | GDRFA Response Handling |
 | Test Case Title | GDRFA acknowledgements, rejections, action-required, timeouts, duplicates, and outages are handled |
 | Objective | Verify each GDRFA outcome updates case status, correction, retry, or recovery path according to rules and source validation. |
@@ -482,6 +528,8 @@
 | Test Case ID | TC-FR-022 |
 | Requirement ID | FR-022 |
 | Test Scenario ID | TS-FR-022 |
+| Business Rule(s) | BR-009, BR-034 |
+| Error Scenario(s) | E-007 |
 | Module | Payment Lifecycle |
 | Test Case Title | Payment-required, pending, paid, failed, cancelled, refunded, and reconciled states follow allowed transitions |
 | Objective | Verify payment states transition only through authorized sources and valid workflow rules with role-appropriate visibility. |
@@ -502,6 +550,8 @@
 | Test Case ID | TC-FR-023 |
 | Requirement ID | FR-023 |
 | Test Scenario ID | TS-FR-023 |
+| Business Rule(s) | BR-009, BR-013, BR-027 |
+| Error Scenario(s) | E-007, E-008, E-015 |
 | Module | Payment Confirmation / Reconciliation |
 | Test Case Title | Payment cannot become paid without authorized provider confirmation or finance reconciliation |
 | Objective | Verify paid status is accepted only from trusted payment confirmation or approved manual reconciliation with required evidence. |
@@ -522,6 +572,8 @@
 | Test Case ID | TC-FR-024 |
 | Requirement ID | FR-024 |
 | Test Scenario ID | TS-FR-024 |
+| Business Rule(s) | BR-011, BR-013 |
+| Error Scenario(s) | E-008, E-011, E-017 |
 | Module | Immigration Processing |
 | Test Case Title | Immigration processing statuses and terminal outcomes are tracked and locked |
 | Objective | Verify immigration statuses update the case timeline, terminal outcomes lock ordinary changes, and invalid updates are quarantined. |
@@ -542,6 +594,8 @@
 | Test Case ID | TC-FR-025 |
 | Requirement ID | FR-025 |
 | Test Scenario ID | TS-FR-025 |
+| Business Rule(s) | None specific |
+| Error Scenario(s) | E-009 |
 | Module | Status Timeline / Role-Based Views |
 | Test Case Title | Authorized users see permitted timeline details only |
 | Objective | Verify status timeline entries and sensitive details are visible according to role, agency scope, and business need. |
@@ -562,6 +616,8 @@
 | Test Case ID | TC-FR-026 |
 | Requirement ID | FR-026 |
 | Test Scenario ID | TS-FR-026 |
+| Business Rule(s) | BR-012 |
+| Error Scenario(s) | None specific |
 | Module | Notifications |
 | Test Case Title | Submission, correction, validation, wallet, payment, GDRFA, immigration, and final decision notifications reach relevant recipients |
 | Objective | Verify notification rules select correct recipients and send minimal, actionable content without unnecessary personal data. |
@@ -582,6 +638,8 @@
 | Test Case ID | TC-FR-027 |
 | Requirement ID | FR-027 |
 | Test Scenario ID | TS-FR-027 |
+| Business Rule(s) | BR-012 |
+| Error Scenario(s) | None specific |
 | Module | Notification Preferences |
 | Test Case Title | Optional preferences are honored while mandatory operational and legal notices remain enabled |
 | Objective | Verify users can control permitted notification preferences without disabling mandatory notices. |
@@ -602,6 +660,8 @@
 | Test Case ID | TC-FR-028 |
 | Requirement ID | FR-028 |
 | Test Scenario ID | TS-FR-028 |
+| Business Rule(s) | BR-040 |
+| Error Scenario(s) | E-016 |
 | Module | Notification Audit / Delivery Tracking |
 | Test Case Title | Notification delivery attempts, retries, failures, results, and recipient category are recorded |
 | Objective | Verify notification delivery history is complete, traceable, privacy-preserving, and visible to authorized support users. |
@@ -622,6 +682,8 @@
 | Test Case ID | TC-FR-029 |
 | Requirement ID | FR-029 |
 | Test Scenario ID | TS-FR-029 |
+| Business Rule(s) | BR-036, BR-037, BR-038, BR-039, BR-040 |
+| Error Scenario(s) | E-020 |
 | Module | Audit Logging |
 | Test Case Title | State, document, validation, wallet, payment, external, privileged, admin, and recovery actions are audited |
 | Objective | Verify all required lifecycle and privileged actions create durable audit records with required attributes and correlation references. |
@@ -642,6 +704,8 @@
 | Test Case ID | TC-FR-030 |
 | Requirement ID | FR-030 |
 | Test Scenario ID | TS-FR-030 |
+| Business Rule(s) | BR-011 |
+| Error Scenario(s) | E-009, E-011 |
 | Module | Record Integrity / Immutability |
 | Test Case Title | Completed decisions, snapshots, financial records, and audit records cannot be modified or deleted without authorized correction |
 | Objective | Verify protected records are immutable to ordinary users and authorized corrections are separately recorded with reason and approval. |
@@ -662,6 +726,8 @@
 | Test Case ID | TC-FR-031 |
 | Requirement ID | FR-031 |
 | Test Scenario ID | TS-FR-031 |
+| Business Rule(s) | None specific |
+| Error Scenario(s) | E-001, E-004, E-006, E-007, E-009 |
 | Module | Error Handling / User Messaging |
 | Test Case Title | User-facing errors explain issue and next action without exposing secrets or unnecessary personal data |
 | Objective | Verify errors across forms, uploads, wallet, payment, authorization, and integrations are clear, role-appropriate, secure, and accessible. |
@@ -682,6 +748,8 @@
 | Test Case ID | TC-FR-032 |
 | Requirement ID | FR-032 |
 | Test Scenario ID | TS-FR-032 |
+| Business Rule(s) | None specific |
+| Error Scenario(s) | E-009 |
 | Module | Operations Search / Export |
 | Test Case Title | Case, payment, status, error, and audit search and export enforce role and scope |
 | Objective | Verify authorized operational users can search, filter, and export permitted data while unauthorized and cross-agency access is blocked. |
@@ -702,6 +770,8 @@
 | Test Case ID | TC-FR-033 |
 | Requirement ID | FR-033 |
 | Test Scenario ID | TS-FR-033 |
+| Business Rule(s) | BR-005, BR-006, BR-031, BR-032, BR-033, BR-034, BR-035 |
+| Error Scenario(s) | E-009, E-019 |
 | Module | Identity and Access Management |
 | Test Case Title | Role and agency scope protect every case, document, wallet, payment, notification, and audit action |
 | Objective | Verify each action is allowed only for authorized role and agency scope and denied attempts leave data unchanged. |
@@ -722,6 +792,8 @@
 | Test Case ID | TC-FR-034 |
 | Requirement ID | FR-034 |
 | Test Scenario ID | TS-FR-034 |
+| Business Rule(s) | BR-014 |
+| Error Scenario(s) | None specific |
 | Module | Privacy / Data Retention |
 | Test Case Title | Personal data categories follow retention, deletion, anonymisation, and legal hold rules |
 | Objective | Verify every personal data category has lifecycle handling and legal holds override deletion where required. |
@@ -742,6 +814,8 @@
 | Test Case ID | TC-FR-035 |
 | Requirement ID | FR-035 |
 | Test Scenario ID | TS-FR-035 |
+| Business Rule(s) | BR-008, BR-026, BR-030 |
+| Error Scenario(s) | E-006, E-016 |
 | Module | Change Resilience / Migration |
 | Test Case Title | Rule, fee, status, and integration changes preserve in-progress applications and identify revalidation |
 | Objective | Verify in-progress cases are not lost, duplicated, advanced, closed, or misrouted during configuration, rule, fee, status, or integration changes. |
@@ -762,6 +836,8 @@
 | Test Case ID | TC-FR-036 |
 | Requirement ID | FR-036 |
 | Test Scenario ID | TS-FR-036 |
+| Business Rule(s) | BR-013 |
+| Error Scenario(s) | E-011 |
 | Module | Workflow Status Transitions |
 | Test Case Title | Allowed status transitions succeed and invalid transitions are rejected without data change |
 | Objective | Verify every lifecycle state change follows the defined status transition matrix, authority, source, precondition, recovery, and audit rules. |
@@ -782,6 +858,8 @@
 | Test Case ID | TC-FR-037 |
 | Requirement ID | FR-037 |
 | Test Scenario ID | TS-FR-037 |
+| Business Rule(s) | BR-015, BR-016, BR-018 |
+| Error Scenario(s) | E-003, E-012, E-013 |
 | Module | Validation Severity |
 | Test Case Title | Validation findings are classified and enforce behavior by severity |
 | Objective | Verify informational, warning, blocking, overrideable blocking, and non-overrideable blocking classifications control display, acknowledgement, correction, override, and workflow gating. |
@@ -802,6 +880,8 @@
 | Test Case ID | TC-FR-038 |
 | Requirement ID | FR-038 |
 | Test Scenario ID | TS-FR-038 |
+| Business Rule(s) | BR-009, BR-022, BR-038 |
+| Error Scenario(s) | E-015 |
 | Module | Wallet Traceability / Reconciliation |
 | Test Case Title | Wallet reservation, debit, release, refund, and reconciliation trace to one case, fee version, and business event |
 | Objective | Verify financial actions maintain one traceable relationship to case, fee calculation version, and accepted submission or payment event. |
@@ -822,6 +902,8 @@
 | Test Case ID | TC-FR-039 |
 | Requirement ID | FR-039 |
 | Test Scenario ID | TS-FR-039 |
+| Business Rule(s) | BR-025, BR-027, BR-028 |
+| Error Scenario(s) | E-005, E-015, E-016 |
 | Module | Idempotency / External Events |
 | Test Case Title | External, financial, immigration, and notification retries do not duplicate outcomes |
 | Objective | Verify repeated attempts with the same business reference preserve or return the original outcome and unauthorized references are rejected or quarantined. |
@@ -842,6 +924,8 @@
 | Test Case ID | TC-FR-040 |
 | Requirement ID | FR-040 |
 | Test Scenario ID | TS-FR-040 |
+| Business Rule(s) | BR-031, BR-032, BR-033, BR-034, BR-035 |
+| Error Scenario(s) | E-009, E-019 |
 | Module | Permission Matrix / Authorization |
 | Test Case Title | Protected actions enforce role, agency scope, lifecycle state, and business reason |
 | Objective | Verify every action in the permission matrix is allowed only for configured actors and denied when role, scope, state, or reason is invalid. |
@@ -862,6 +946,8 @@
 | Test Case ID | TC-FR-041 |
 | Requirement ID | FR-041 |
 | Test Scenario ID | TS-FR-041 |
+| Business Rule(s) | BR-036, BR-037, BR-038, BR-039, BR-040 |
+| Error Scenario(s) | E-020 |
 | Module | Audit Validation |
 | Test Case Title | Auditable events require mandatory audit fields before acceptance |
 | Objective | Verify lifecycle, access, financial, integration, and recovery events cannot be accepted without mandatory audit metadata. |
@@ -882,6 +968,8 @@
 | Test Case ID | TC-FR-042 |
 | Requirement ID | FR-042 |
 | Test Scenario ID | TS-FR-042 |
+| Business Rule(s) | BR-019, BR-020, BR-021 |
+| Error Scenario(s) | E-001, E-002, E-018 |
 | Module | Document Quality / OCR Thresholds |
 | Test Case Title | Document and OCR thresholds gate progression beyond OCR and validation |
 | Objective | Verify only documents and OCR results meeting configured thresholds or allowed manual recovery can proceed beyond OCR and validation. |
