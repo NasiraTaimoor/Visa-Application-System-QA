@@ -1,0 +1,5 @@
+{
+  "mode": "mocked",
+  "delivered_response": {"delivery_status": "delivered"},
+  "failed_response": {"delivery_status": "failed", "failure_reason": "provider_unreachable"}
+}

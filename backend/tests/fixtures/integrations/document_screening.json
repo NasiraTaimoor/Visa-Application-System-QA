@@ -1,0 +1,15 @@
+{
+  "mode": "mocked",
+  "accept_response": {
+    "screening_status": "accepted",
+    "size_result": "pass",
+    "page_result": "pass",
+    "quality_result": "pass",
+    "security_result": "pass"
+  },
+  "reject_response": {
+    "screening_status": "rejected",
+    "reject_reason_category": "quality",
+    "protected_diagnostic_reference": "diag-ref-0001"
+  }
+}

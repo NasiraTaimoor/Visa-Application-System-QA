@@ -1,0 +1,15 @@
+{
+  "mode": "mocked",
+  "agency_balances": {
+    "sub-agency-001": 1000000,
+    "sub-agency-002": 500
+  },
+  "reservation_response": {
+    "status": "reserved",
+    "reservation_reference": "wal-res-0001"
+  },
+  "shortfall_response": {
+    "status": "insufficient_funds",
+    "available_balance_result": "shortfall"
+  }
+}

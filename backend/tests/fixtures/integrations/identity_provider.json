@@ -1,0 +1,16 @@
+{
+  "mode": "mocked",
+  "users": [
+    {"user_id": "u-applicant-1", "role": "applicant", "agency_id": null},
+    {"user_id": "u-subagency-1", "role": "sub_agency_officer", "agency_id": "sub-agency-001"},
+    {"user_id": "u-subagency-2", "role": "sub_agency_officer", "agency_id": "sub-agency-002"},
+    {"user_id": "u-mainagency-1", "role": "main_agency_case_officer", "agency_id": "main-agency-root"},
+    {"user_id": "u-mainagency-2", "role": "main_agency_case_officer", "agency_id": "main-agency-other"},
+    {"user_id": "u-supervisor-1", "role": "main_agency_supervisor", "agency_id": "main-agency-root"},
+    {"user_id": "u-gdrfa-1", "role": "gdrfa_immigration_liaison", "agency_id": "main-agency-root"},
+    {"user_id": "u-system-1", "role": "system_service", "agency_id": null},
+    {"user_id": "u-finance-1", "role": "finance_officer", "agency_id": "main-agency-root"},
+    {"user_id": "u-support-1", "role": "support_admin", "agency_id": "main-agency-root"},
+    {"user_id": "u-audit-1", "role": "auditor_compliance", "agency_id": "main-agency-root"}
+  ]
+}

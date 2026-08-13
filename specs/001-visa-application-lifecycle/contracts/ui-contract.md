@@ -54,3 +54,18 @@ The UI contract defines expected role-specific surfaces and validation obligatio
 - Focus moves to errors and returned correction points predictably.
 - Timeout and interrupted session states are recoverable after authentication.
 - Accessible manual fallback exists when OCR is unavailable or unusable.
+
+## Implementation Mapping (T190)
+
+React + TypeScript (Vite, react-router-dom), realized under `frontend/src/<workspace>/pages/`. Shared primitives (`frontend/src/shared/components/`): `FormField` (labelled control with hint/error, WCAG-associated via `useId()`), `ErrorSummary` (focus-managed `role="alert"` summary), `StatusTimeline` (shared across workspaces per FR-025). Role-based layout shell: `frontend/src/shared/layout/AppShell.tsx`, routed in `frontend/src/App.tsx`.
+
+| Workspace | Screens realized |
+|---|---|
+| Applicant (`applicant/pages/`) | `create_application`, `draft_intake`, `session_recovery`, `document_upload`, `ocr_review`, `ocr_manual_fallback`, `validation_findings`, `final_outcome`, `notification_preferences` |
+| Sub-Agency (`sub-agency/pages/`) | `create_on_behalf`, `wallet_verification`, `submission_confirmation` (reuses `draft_intake` for on-behalf editing) |
+| Main Agency (`main-agency/pages/`) | `case_queue`, `case_review`, `gdrfa_submission` |
+| Finance (`finance/pages/`) | `payment_queue` |
+| Support (`support/pages/`) | `recovery_tasks` |
+| Auditor/Compliance (`audit/pages/`) | `audit_history`, `export_compliance` |
+
+Client-side authorization is advisory only (mock identity tokens in `shared/api/identity.ts` matching the backend's mocked user directory); every action is re-authorized server-side per the API contract. Accessibility acceptance is enforced by an automated `jest-axe` sweep (`frontend/tests/accessibility/`, including a full applicant-portal sweep in `test_wcag_full_sweep.test.tsx`) plus keyboard-interaction assertions; the manual keyboard/screen-reader review remains a separate human-executed task (see `checklists/accessibility-manual-review.md`).
