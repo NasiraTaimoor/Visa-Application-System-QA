@@ -59,3 +59,33 @@ All APIs are planned as versioned service contracts. Concrete protocol and frame
 | Create notification preference | Update allowed preferences | recipient, channel preference | preference state |
 | Get recovery tasks | Support/operations queue | filters, actor scope | recovery tasks |
 | Resolve recovery task | Complete controlled recovery | task id, action, reason | task result, audit event |
+
+## Implementation Mapping (T190)
+
+Concrete realized endpoints (all under `/api/v1`, backend `src/api/*_routes.py`), tech stack Python/FastAPI + React/TypeScript per plan.md's post-implementation stack decision:
+
+| Contract operation | Realized route | Handler module |
+|---|---|---|
+| Create application | `POST /applications` | `applications/intake/create_application.py` |
+| Update intake | `PATCH /applications/{id}` | `applications/intake/update_intake.py` |
+| Resume draft | `GET /applications/{id}/resume` | `applications/intake/resume_draft.py` |
+| Abandon draft | `POST /applications/{id}/abandon` | `applications/intake/abandon_draft.py` |
+| Validate application | `POST /applications/{id}/validate` | `validation/validation_engine.py` |
+| Upload/Replace document | `POST /applications/{id}/documents`, `POST .../documents/{doc_id}/replace` | `documents/document_service.py` |
+| Get OCR result / Confirm OCR values | `GET /documents/{doc_id}/ocr`, `POST /applications/{id}/documents/{doc_id}/ocr/confirm` | `ocr/ocr_review_service.py` |
+| Approve validation override | `POST /validation/findings/{finding_id}/override` | `validation/override_service.py` |
+| Calculate fees | `GET /applications/{id}/fees` | `finance/fee_calculation_service.py` |
+| Verify wallet | `POST /applications/{id}/wallet/verify` | `finance/wallet_lifecycle_service.py` |
+| Submit to main agency | `POST /applications/{id}/submit` | `applications/submission/sub_agency_submission_service.py` |
+| Process main agency action | `POST /applications/{id}/claim`, `.../correction-request`, `.../correction-resolve`, `.../readiness-approve` | `agencies/main_agency_queue_service.py`, `correction_request_service.py`, `readiness_approval_service.py` |
+| Submit to GDRFA | `POST /applications/{id}/gdrfa/submit` | `integrations/gdrfa_response_service.py` |
+| Record payment event / Manual reconciliation | `POST /applications/{id}/payment/confirm`, `.../payment/reconcile` | `finance/payment_service.py`, `finance/reconciliation_service.py` |
+| Record immigration update | `POST /applications/{id}/immigration/update` | `agencies/immigration_status_service.py` |
+| Get status timeline | `GET /applications/{id}/status-timeline` | `applications/status/status_timeline_service.py` |
+| Create notification preference | `POST /applications/{id}/notification-preferences` | `notifications/preference_service.py` |
+| Get audit history | `GET /audit/events` | `audit/audit_search_service.py` |
+| Export records | `POST /audit/export` | `compliance/export_service.py` |
+| Get/Resolve recovery task | `GET /recovery/tasks`, `POST /recovery/tasks/{id}/resolve` | `recovery/recovery_task_service.py` |
+| Search cases (masked) | `POST /support/cases/{id}/access` | `audit/support_access_service.py` |
+
+All routes enforce the Common Requirements above via `src/api/deps.py` (identity, correlation reference, idempotency key extraction) and each service's own `authorize()`/`record_audit_event()` calls. Backed by 166 backend tests (`backend/tests/{contract,integration,unit,e2e,regression,performance,security}`) and 37 frontend tests (`frontend/tests/{ui,accessibility}`).

@@ -1,0 +1,18 @@
+{
+  "mode": "mocked",
+  "acknowledgement_response": {
+    "response_type": "acknowledged",
+    "external_reference": "gdrfa-ref-0001"
+  },
+  "rejection_response": {
+    "response_type": "rejected",
+    "response_reason": "missing_supporting_document"
+  },
+  "timeout_response": {
+    "response_type": "timeout"
+  },
+  "action_required_response": {
+    "response_type": "action_required",
+    "response_reason": "clarification_needed"
+  }
+}

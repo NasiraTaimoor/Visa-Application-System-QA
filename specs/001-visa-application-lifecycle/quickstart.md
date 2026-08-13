@@ -68,3 +68,15 @@ This guide defines validation activities for the implementation phase. It does n
 - E2E tests: full lifecycle happy paths and rework paths.
 - Security tests: authorization boundaries, denied attempts, secrets/log masking, sensitive export controls.
 - Performance tests: load, concurrency, endurance, queue latency, and export volume.
+
+## Validation Results (T189)
+
+**Executed**: 2026-08-13, against a live `uvicorn` instance of the FastAPI backend (SQLite scaffold store, mocked integrations), driven with real HTTP requests (not the in-process test client), plus the full automated suite.
+
+**Automated suite**: 166 backend tests (contract, integration, unit, e2e, regression, performance-smoke, security) and 37 frontend tests (UI, accessibility) — all passing.
+
+**Core Validation Flow (steps 1-12)**: executed live end to end for an applicant-led tourist-visa case (`VA-000001`) — draft creation, intake completion, resume with correct missing-item guidance and date-of-birth masking, document upload (accepted case), OCR review and confirmation, validation reaching `ready_for_sub_agency_review`, wallet verification and reservation, sub-agency submission, main agency claim and readiness approval, GDRFA acknowledgement, payment confirmation, and immigration final decision (`approved`). The resulting status timeline showed all 11 lifecycle transitions in order, and the audit history showed 21 correctly-ordered audit events including notification dispatch records. A parallel sub-agency-led run (student visa, `VA-000002`) and the four rework paths (validation failure → correction, GDRFA rejection → correction-resolve, payment failure → manual reconciliation, immigration action-required → final decision) are covered by `backend/tests/e2e/`.
+
+**Finding and fix during this execution**: the live resume response for `VA-000001` still listed both required documents as missing *after* they had been uploaded and accepted (and the case had already reached `approved`). Root cause: `completeness_service.calculate_missing_items` unconditionally listed every visa-type-required document type — its own comment noted the result was meant to be "narrowed to 'not yet confirmed uploaded' by caller," but neither `update_intake` nor `resume_draft` performed that narrowing. Fixed by adding `get_accepted_document_types()` and passing it through from both callers; re-verified live that `missing_items` is empty once both documents are accepted. All 166 backend tests still pass.
+
+**Not executed in this pass** (require infrastructure or human participants beyond this session's scope, tracked separately): literal 10,000-application/500-concurrent-user load against real infrastructure (T181/T182 use representative scaled/timing-budget checks instead); manual keyboard/screen-reader accessibility review (T187); moderated usability acceptance session (T192).

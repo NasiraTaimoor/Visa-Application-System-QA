@@ -1,0 +1,28 @@
+{
+  "note": "Synthetic, minimized data only. No production personal data (constitution: Data Protection and Compliance).",
+  "applications": [
+    {
+      "application_id": "app-0001",
+      "applicant_id": "app-0001-applicant",
+      "visa_type": "tourist",
+      "owning_sub_agency_id": "sub-agency-001",
+      "current_status": "draft_created"
+    },
+    {
+      "application_id": "app-0002",
+      "applicant_id": "app-0002-applicant",
+      "visa_type": "work",
+      "owning_sub_agency_id": "sub-agency-002",
+      "current_status": "ready_for_sub_agency_review"
+    }
+  ],
+  "applicants": [
+    {
+      "applicant_id": "app-0001-applicant",
+      "legal_name": "Jane Synthetic Doe",
+      "date_of_birth": "1990-05-14",
+      "nationality": "GBR",
+      "contact_details": {"email": "jane.doe@example.test", "phone": "+10000000000"}
+    }
+  ]
+}

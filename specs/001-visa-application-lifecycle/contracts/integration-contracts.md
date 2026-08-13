@@ -78,3 +78,20 @@ All integration adapters must document ownership, data flow, security responsibi
 **Outbound**: operational, integration, security, queue, performance, and recovery events with correlation references and minimized data.
 
 **Failure handling**: Incidents involving confidentiality, integrity, availability, payments, or incorrect decisions must be recorded and linked to remediation actions.
+
+## Implementation Mapping (T190)
+
+All adapters are mocked per plan.md's scope decision (real vendor integration is out of scope for this build); each reads its canned responses from `backend/tests/fixtures/integrations/*.json` and is selected via a deterministic, test-controllable routing-signal marker embedded in the applicant's legal name (or file content, for screening/OCR) — the same pattern used throughout so contract/integration tests remain reproducible without a live vendor.
+
+| Contract adapter | Realized module | Fixture |
+|---|---|---|
+| OCR Service | `src/ocr/ocr_orchestration_service.py` | `ocr_provider.json` |
+| Document Screening Service | `src/documents/screening_adapter.py` | `document_screening.json` |
+| Wallet or Ledger Service | `src/integrations/wallet_adapter.py` | `wallet_ledger.json` |
+| GDRFA Submission Service | `src/integrations/gdrfa_adapter.py` + `gdrfa_response_service.py` | `gdrfa.json` |
+| Payment Provider | `src/integrations/payment_adapter.py` | `payment_provider.json` |
+| Immigration Processing Source | `src/integrations/immigration_adapter.py` | `immigration_processing.json` |
+| Identity and Access Management | `src/auth/identity_provider.py` | `identity_provider.json` |
+| Notification Gateways | `src/integrations/notification_gateway_adapter.py` | `notification_gateway.json` |
+
+Idempotency is enforced via `src/applications/idempotency/idempotency_store.py` (business-reference keys) plus, for wallet/payment/submission rows, a unique `idempotency_key` database column as a second guard. Quarantine (unmatched/contradictory events) is implemented in `src/agencies/immigration_status_service.py` writing `ExternalCaseResponse.matched_status="unmatched"` without mutating case status. Monitoring/incident wiring (`src/observability/monitoring.py`) and structured, secret/PII-masking logging (`src/observability/logging.py`) are in place; real APM/incident-tool wiring is a deployment-time integration, not part of this build.

@@ -1,0 +1,11 @@
+{
+  "mode": "mocked",
+  "final_approved_response": {
+    "status_value": "approved",
+    "external_reference": "imm-ref-0001"
+  },
+  "action_required_response": {
+    "status_value": "action_required",
+    "reason": "additional_biometrics_required"
+  }
+}

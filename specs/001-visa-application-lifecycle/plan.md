@@ -12,15 +12,17 @@ The architecture separates applicant-facing workflows, agency operations, financ
 
 ## Technical Context
 
-**Language/Version**: NEEDS CLARIFICATION. The current repository contains specification artifacts only and the feature spec intentionally does not prescribe language, framework, storage, hosting, or protocol.
+**Resolved at implementation start** (previously deferred by design; see `tasks.md`'s note that the stack would be selected "before implementation begins, without changing the module boundaries or task structure"): Python 3.12 / FastAPI backend, React 18 + TypeScript (Vite) frontend. Selected because the module boundaries, contracts, and task breakdown below are framework-agnostic and this pairing gives fast iteration, strong typing on both sides, and mature test tooling (pytest, Vitest) without requiring any change to the design above.
 
-**Primary Dependencies**: NEEDS CLARIFICATION for final implementation stack. Required capability classes are identity and access management, relational case storage, object/document storage, OCR provider, document screening provider, wallet or ledger service, GDRFA integration, payment provider, immigration processing source, notification gateway, audit log store, monitoring, and test automation framework.
+**Language/Version**: Backend: Python 3.12, FastAPI ≥0.110, SQLAlchemy ≥2.0. Frontend: TypeScript 5.5, React 18.3, Vite 5.
 
-**Storage**: Planned logical storage includes transactional application data store, immutable audit/event store, protected object storage for documents, wallet/payment ledger integration records, notification delivery records, and operational recovery queues. Concrete product choice is NEEDS CLARIFICATION.
+**Primary Dependencies**: Backend — FastAPI, SQLAlchemy, Alembic (migrations), Pydantic/pydantic-settings, python-multipart (uploads). Frontend — react-router-dom, Vitest, @testing-library/react, jest-axe. All external capability classes (identity, OCR, document screening, wallet/ledger, GDRFA, payment, immigration, notification gateway) are implemented as mocked adapters behind stable interfaces (`backend/src/integrations/`), reading canned responses from `backend/tests/fixtures/integrations/*.json`, per this build's explicit scope (real vendor integration is a follow-on).
 
-**Testing**: Planned test layers include unit tests, contract tests, API/integration tests, UI tests, accessibility checks, end-to-end workflow tests, regression suites, performance/load tests, security authorization tests, and idempotency/concurrency tests. Concrete tools are NEEDS CLARIFICATION.
+**Storage**: SQLite for the scaffold/test environment (two physically separate engines: transactional store `backend/src/db/` and immutable audit store `backend/src/audit/store/`, matching the planned separation above); `.env.example` documents the PostgreSQL connection strings a production deployment would use for both. Document bytes are stored via a pluggable `ObjectStorageAdapter` (local disk in the scaffold, swappable for S3/GCS/Azure Blob) behind an opaque `file_reference`.
 
-**Target Platform**: Web application plus backend service APIs and asynchronous integration workers. Hosting/runtime is NEEDS CLARIFICATION.
+**Testing**: pytest (backend: unit, contract, integration, e2e, regression, performance-smoke, security — `backend/tests/`) and Vitest + Testing Library + jest-axe (frontend: unit, UI, accessibility — `frontend/tests/`). 203 tests total (166 backend, 37 frontend) as of Phase 10 completion.
+
+**Target Platform**: Backend served via `uvicorn` (ASGI); frontend built/served via Vite. Hosting/runtime (containers, cloud provider, CDN) remains a deployment-time decision not fixed by this build.
 
 **Project Type**: Web application with backend services, frontend user interfaces, external system integrations, background workers, and compliance/audit reporting.
 

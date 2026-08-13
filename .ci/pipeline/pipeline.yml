@@ -1,0 +1,68 @@
+# CI pipeline skeleton (T007). Wires all required quality stages; concrete
+# runner/provider (GitHub Actions, GitLab CI, etc.) is an implementation
+# choice deferred until the hosting target is selected.
+name: visa-application-system-ci
+
+stages:
+  - lint
+  - unit
+  - contract
+  - integration
+  - ui
+  - e2e
+  - performance
+  - security
+  - accessibility
+
+jobs:
+  lint:
+    stage: lint
+    steps:
+      - run: backend -> ruff check . && black --check .
+      - run: frontend -> npm run lint
+
+  unit:
+    stage: unit
+    steps:
+      - run: backend -> pytest tests/unit
+      - run: frontend -> npm run test:unit
+
+  contract:
+    stage: contract
+    steps:
+      - run: backend -> pytest tests/contract
+
+  integration:
+    stage: integration
+    needs: [contract]
+    steps:
+      - run: backend -> pytest tests/integration
+
+  ui:
+    stage: ui
+    steps:
+      - run: frontend -> npm run test:ui
+
+  e2e:
+    stage: e2e
+    needs: [integration, ui]
+    steps:
+      - run: backend -> pytest tests/e2e
+      - run: frontend -> npm run test:e2e
+
+  performance:
+    stage: performance
+    needs: [e2e]
+    optional: true
+    steps:
+      - run: backend -> pytest tests/performance
+
+  security:
+    stage: security
+    steps:
+      - run: backend -> pytest tests/security
+
+  accessibility:
+    stage: accessibility
+    steps:
+      - run: frontend -> npm run test:a11y

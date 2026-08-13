@@ -1,0 +1,44 @@
+[project]
+name = "visa-application-backend"
+version = "0.1.0"
+description = "Visa Application Lifecycle backend service"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.29",
+    "sqlalchemy>=2.0",
+    "alembic>=1.13",
+    "psycopg2-binary>=2.9",
+    "pydantic>=2.6",
+    "pydantic-settings>=2.2",
+    "python-multipart>=0.0.9",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=4.1",
+    "httpx>=0.27",
+    "ruff>=0.4",
+    "black>=24.0",
+]
+
+[tool.black]
+line-length = 100
+target-version = ["py312"]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "workers", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B"]
+# B008 flags function calls in default arguments, which is exactly how
+# FastAPI's dependency injection (`Depends(...)`) works by design across
+# every route module; ignoring it avoids ~60 false positives rather than
+# fighting the framework's idiomatic pattern.
+ignore = ["B008"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
