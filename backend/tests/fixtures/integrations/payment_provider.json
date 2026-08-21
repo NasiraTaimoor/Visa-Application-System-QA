@@ -1,0 +1,12 @@
+{
+  "mode": "mocked",
+  "paid_response": {
+    "state": "paid",
+    "provider_reference": "pay-ref-0001",
+    "receipt_reference": "receipt-0001"
+  },
+  "failed_response": {
+    "state": "failed",
+    "reason": "card_declined"
+  }
+}

@@ -1,0 +1,53 @@
+:root {
+  color-scheme: light;
+  --color-fg: #1a1a1a;
+  --color-bg: #ffffff;
+  --color-error: #b30000;
+  --color-focus: #0b5fff;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  color: var(--color-fg);
+  background: var(--color-bg);
+  margin: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+}
+.skip-link:focus {
+  left: 0;
+  background: var(--color-bg);
+  padding: 0.5rem 1rem;
+  z-index: 10;
+}
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+[tabindex]:focus {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.form-field-error,
+.error-summary {
+  color: var(--color-error);
+}
+
+.error-summary {
+  border: 2px solid var(--color-error);
+  padding: 1rem;
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}

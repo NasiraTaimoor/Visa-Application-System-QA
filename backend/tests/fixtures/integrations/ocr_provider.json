@@ -1,0 +1,33 @@
+{
+  "mode": "mocked",
+  "default_response": {
+    "extraction_status": "completed",
+    "extracted_fields": {
+      "passport_number": "P1234567",
+      "surname": "DOE",
+      "given_names": "JANE",
+      "date_of_birth": "1990-05-14",
+      "expiry_date": "2030-05-13",
+      "nationality": "GBR"
+    },
+    "confidence_by_field": {
+      "passport_number": 0.97,
+      "surname": 0.95,
+      "given_names": 0.93,
+      "date_of_birth": 0.9,
+      "expiry_date": 0.9,
+      "nationality": 0.92
+    },
+    "overall_confidence": 0.93,
+    "warning_flags": []
+  },
+  "low_confidence_response": {
+    "extraction_status": "completed",
+    "overall_confidence": 0.55,
+    "warning_flags": ["below_blocking_threshold"]
+  },
+  "failure_response": {
+    "extraction_status": "failed",
+    "failure_reason": "provider_timeout"
+  }
+}
