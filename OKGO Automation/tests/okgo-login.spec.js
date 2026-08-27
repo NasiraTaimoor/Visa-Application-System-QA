@@ -11,29 +11,27 @@ test('OKGO Super Admin Login with OTP', async ({ page }) => {
     await page.locator('input[type="password"]')
         .fill(process.env.OKGO_PASSWORD);
 
-    await page.getByRole('button', { name: 'Sign in' }).click();
+    await page.getByRole('button', {
+        name: 'Sign in'
+    }).click();
 
-await page.screenshot({
-    path: 'screenshots/login-result.png',
-    fullPage: true
-});
-
-await expect(page).toHaveURL(/verify-otp/, {
-    timeout: 15000
-});
+    // Confirm that the OTP page opens
+    await expect(page).toHaveURL(/verify-otp/, {
+        timeout: 15000
+    });
 
     await expect(
         page.getByText('Enter your one-time code')
     ).toBeVisible();
 
-    // Enter the current OTP
-    await page.getByLabel('One-time code')
-        .fill(process.env.OKGO_OTP);
-
     await page.screenshot({
         path: 'screenshots/01-otp-page.png',
         fullPage: true
     });
+
+    // Enter the current OTP
+    await page.getByLabel('One-time code')
+        .fill(process.env.OKGO_OTP);
 
     // Submit OTP
     await page.getByRole('button', {
@@ -47,7 +45,7 @@ await expect(page).toHaveURL(/verify-otp/, {
     });
 
     await page.screenshot({
-        path: 'screenshots/02-super-admin-dashboard.png',
+        path: 'screenshots/02-login-success.png',
         fullPage: true
     });
 

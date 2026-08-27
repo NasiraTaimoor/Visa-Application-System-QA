@@ -1,0 +1,15 @@
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+
+# Test evidence generated locally
+/screenshots/
+
+# Environment variables and credentials
+.env
+.env.*
+!.env.example
